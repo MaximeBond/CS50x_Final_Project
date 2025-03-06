@@ -12,6 +12,66 @@ import sys
 import os
 import random
 
+def check_files():
+    """ Vérifie si tous les fichiers nécessaires existent avant de lancer le jeu. """
+    required_files = [
+        "media/spaceman.png",
+        "media/alien.png",
+        "media/angry_alien.png",
+        "media/win.png",
+        "media/game_over.png",
+        "media/nostromo.jpg",
+        "media/spaceship.jpg",
+        "media/game_on.mp3",
+        "media/disco-boogie.mp3",
+        "media/game_over.mp3",
+        "best_time.txt",
+        "sup.otf"
+    ]
+
+    missing_files = [file for file in required_files if not os.path.exists(file)]
+    
+    if missing_files:
+        # Initialiser Pygame
+        pygame.init()
+        screen = pygame.display.set_mode((800, 600))
+        pygame.display.set_caption("Erreur de Fichier")
+
+        # Fond noir
+        screen.fill((0, 0, 0))
+
+        # Charger une police système
+        font = pygame.font.SysFont("arial", 30)
+        small_font = pygame.font.SysFont("arial", 20)
+
+        # Texte d'erreur
+        error_text = font.render("! Fichiers manquants détectés !", True, (255, 0, 0))
+        screen.blit(error_text, (150, 50))
+
+        # Lister les fichiers manquants
+        y_offset = 120
+        for file in missing_files:
+            file_text = small_font.render(f"- {file}", True, (255, 255, 255))
+            screen.blit(file_text, (50, y_offset))
+            y_offset += 30
+
+        # Instructions pour quitter
+        quit_text = font.render("Appuyez sur n'importe quelle touche pour quitter...", True, (200, 200, 0))
+        screen.blit(quit_text, (100, 500))
+
+        pygame.display.flip()
+
+        # Attente de l'utilisateur
+        waiting = True
+        while waiting:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT or event.type == pygame.KEYDOWN:
+                    pygame.quit()
+                    sys.exit()
+                    
+# Vérifier que tous les fichiers sont présents
+check_files()
+                    
 # Initialisation de Pygame
 pygame.init()
 pygame.mixer.init()
@@ -313,7 +373,8 @@ def show_end_screen(message, integer):
             screen.blit(spaceman_img, spaceman_rect)
         
         pygame.display.flip()
-                
+    
+
 def show_intro_screen():
     
     # Affiche l'écran d'introduction et attend que le joueur presse la touche 'SPACE'.
