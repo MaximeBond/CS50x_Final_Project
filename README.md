@@ -118,8 +118,8 @@ The game **records the fastest time** taken to eliminate the alien.
 
 ---
 
-## 🏆 **Room to improvement**
-- Use Object Oriented Programming (OOP) instead of procedural code
+## 🏆 **Room for improvement**
+- Object Oriented Programming (OOP) instead of procedural code
 - Improve the gameplay, add levels, increase difficulty ... 
 
 ---
