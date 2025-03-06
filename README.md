@@ -1,23 +1,139 @@
-# ALIEN GAME
-#### Video Demo:  <URL HERE>
-#### Description:
-This project is a video game developed as the Final Project for the CS50x course. 
-It is an improved version of the 1st exercise of the course (Week 0) developed with Scratch.  
-(https://scratch.mit.edu/projects/1065060280)
+# **ALIEN GAME**
 
-In this video game, a speceman is being chased by a xenomorph inside a spaceship. The user controls the spaceman, 
-it can be moved up/down/left/right with the '↑''↓''←''→' keys. The spaceman, pressing 's' key can shoot a laser.
-At the begining of the game, spaceman has 100 lifepoints and the alien has 10.
-When the alien is being shot, it looses a lifepoint. But when the alien reaches the spaceman, spaceman looses 
-his lifepoints.
-If either the spaceman or the alien reaches 0 lifepoint, the game ends. 
+## 🎬 Video Demo:  
+<URL HERE> https://youtu.be/npPKhyxz8l0
 
-The project contains several files:
-    - 'alien_v1.py', it is the main script that runs the game. 
-    - 'testing.py', this is a simple script that allowed me to test differents images, a jump animation for the spaceman,
-or where to display my text. 
-    - 'test_font.py', this code can be reused for any pygame project. It displays all the fonts available in pygame. 
-    - 'best_time.txt', this file store the shortest time the user took to eliminate the alien. 
-    - 'sup.otf', the font used for the title of the game
-    - the media folder contains music, images for the characters and the backgrounds, 'win.png' and 'game_over2.png' are 
-original images created with ChatGPT! Other images and musics have been found on the internet. 
+## 📖 Description:
+
+**Alien Game** is a **2D arcade-style game** developed as the **Final Project** for the **CS50x** course.  
+This game is an **improved version** of the **first exercise (Week 0)** of the course, initially built with **Scratch**.  
+👉 [Original Scratch Project](https://scratch.mit.edu/projects/1065060280)
+
+The game takes place **inside a spaceship**, where a **spaceman** is trying to **escape from a deadly alien (xenomorph)**. The player controls the **spaceman**, who can move freely and **shoot lasers** to eliminate the alien before getting caught.  
+
+### 🎮 **Gameplay Mechanics**
+- The **spaceman** can move **up, down, left, and right** using the **arrow keys (↑ ↓ ← →)**.
+- The **'S' key** allows the spaceman to **shoot a laser** in his current direction.
+- The **alien chases** the spaceman, trying to reach and deplete his life points.
+- The **spaceman starts with 100 HP**, while the **alien starts with 10 HP**.
+- **Each laser hit on the alien** reduces its life points by **1**.
+- **If the alien touches the spaceman**, he loses **life points** over time.
+- The game ends when **either the spaceman or the alien reaches 0 HP**.
+
+---
+
+## 📁 **Project Structure**
+This project contains several files:
+
+| File | Description |
+|------|------------|
+| `alien_v1.py` | The **main script** that runs the game. |
+| `testing.py` | A simple script used for testing different **images, animations (jumping), and text positions**. |
+| `test_font.py` | A reusable script that **displays all available fonts in Pygame**. Useful for testing font selection. |
+| `best_time.txt` | Stores the **shortest time** the player took to eliminate the alien. |
+| `sup.otf` | The **font** used for the game’s title. |
+| `media/` | Folder containing **images, music, and background assets**.|
+
+---
+
+## 🚀 **How to Run the Game**
+### **1️⃣ Install Dependencies**
+Ensure you have **Python** and **Pygame** installed.  
+If you don’t have Pygame, install it using:
+
+```sh
+pip install pygame
+```
+
+### **2️⃣ Run the Main Script**
+Execute the game script:
+
+```sh
+python alien_v1.py
+```
+
+The game window should launch automatically.
+
+---
+
+## 🖼️ **Game Assets**
+The game uses various **images and sounds** stored in the `media/` folder, including:
+- **Character Sprites:** `spaceman.png`, `alien.png`, `angry_alien.png`
+- **Backgrounds:** `nostromo.jpg` (intro), `spaceship.jpg` (gameplay)
+- **Music:** `game_on.mp3`, `disco-boogie.mp3`, `game_over.mp3`
+- **End Screens:** `win.png`, `game_over.png`
+
+> 📝 Note: Some images (`win.png`, `game_over2.png`) were generated with **ChatGPT**, while others were **found online**.
+
+---
+
+## 🛠️ **Game Functions Explained**
+### **🟢 `show_intro_screen()`**
+📌 **Displays the introduction screen before the game starts.**  
+- Shows the **game title** and **instructions**.
+- Displays the **best time** if available.
+- Waits for the player to **press SPACE** to start.
+
+### **🟢 `run_game()`**
+📌 **Main game loop where the action happens.**  
+- Initializes the game environment.
+- Handles **player movement** and **laser shooting**.
+- Controls **alien movement** and AI behavior.
+- Detects **collisions between lasers and the alien**.
+- Updates the **game timer and best time records**.
+- Ends the game when **either the spaceman or alien loses all HP**.
+
+### **🟢 `show_end_screen(message, integer)`**
+📌 **Displays the game-over screen when the game ends.**  
+- If the spaceman **wins**, it shows a **success message**.
+- If the alien **wins**, it shows a **"Game Over"** screen.
+- Lets the player **restart (SPACE) or quit (Q)**.
+
+### **🟢 `check_files()`**
+📌 **Ensures all necessary game files exist before launching.**  
+- If a file is missing, it shows an **error message in a Pygame window**.
+- Prevents the game from **crashing due to missing assets**.
+- Lists the missing files and waits for user confirmation before exiting.
+
+---
+
+## ⏳ **Game Scoring & Best Time**
+The game **records the fastest time** taken to eliminate the alien.  
+- This time is **saved in `best_time.txt`**.
+- On each playthrough, if the player **beats the previous record**, the new time is **saved automatically**.
+
+---
+
+## 🏆 **Features**
+### ✅ **Pygame-Based Graphics & Animations**
+- Smooth **character movement** and **collision detection**.
+- High-quality **background images** and **sprite scaling**.
+
+### ✅ **Dynamic Alien AI**
+- The **alien moves towards the spaceman** dynamically.
+- If shot, it **stops temporarily** before resuming the chase.
+
+### ✅ **Enhanced Error Handling**
+- **Missing files?** No problem! The game now **warns the user** instead of crashing.
+
+---
+
+## 🏆 **Room to improvement**
+- Use Object Oriented Programming (OOP) instead of procedural code
+- Improve the gameplay, add levels, increase difficulty ... 
+
+---
+
+## 📜 **License**
+This project is licensed under the **MIT License**. 
+
+### ⚠️ What This Means:
+- You are **free to use, modify, and distribute** this code.
+- You **must include the original license** in any distribution.
+- The author **provides no warranty** for the software.
+
+For more details, see the `LICENSE.md` file.
+
+---
+
+## 🔥 **Enjoy the game and have fun blasting aliens!** 👾💥
