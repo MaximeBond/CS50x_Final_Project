@@ -2,9 +2,8 @@
 """
 Éditeur de Spyder
 
-Ce scrypt est un jeu développé en tant que projet final de la formation CS50x.
-Il est une version améliorée du 1er exercice de la formation (Week 0) développé avec Scratch.  
-(https://scratch.mit.edu/projects/1065060280)
+03/2025
+github.com/MaximeBond
 """
 
 import pygame
