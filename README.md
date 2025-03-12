@@ -5,8 +5,7 @@
 
 ## 📖 Description:
 
-**Alien Game** is a **2D arcade-style game** developed as the **Final Project** for the **CS50x** course.  
-This game is an **improved version** of the **first exercise (Week 0)** of the course, initially built with **Scratch**.  
+**Alien Game** is a **2D arcade-style game** and an **improved version** of a project initially built with **Scratch**.  
 👉 [Original Scratch Project](https://scratch.mit.edu/projects/1065060280)
 
 The game takes place **inside a spaceship**, where a **spaceman** is trying to **escape from a deadly alien (xenomorph)**. The player controls the **spaceman**, who can move freely and **shoot lasers** to eliminate the alien before getting caught.  
